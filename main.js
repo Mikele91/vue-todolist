@@ -2,21 +2,41 @@ const app = new Vue ({
     el: "#root",
     data:{
         todos:[
-            "Fare i compiti", "Fare il check in", "Prednere l'aereo"
+
+            {
+                tipo:"Fare i compiti", 
+                stato : false,
+            },
+
+            {
+                tipo:"Fare il check in", 
+                stato : true,
+            },
+            {
+                tipo:"Prendere aereo", 
+                stato : false,
+            },
+
+
         ],
-        newTodo:"",
+        newTodo:{tipo:"",
+                stato:false
+                },
     },
     methods:{
         push: function(){
-            if(this.newTodo!= ""){
-                this.todos.push(this.newTodo);
+            if(this.newTodo.tipo!= ""){
+                this.todos.tipo.push(this.newTodo.tipo);
                 this.newTodo="";
 
             }
         },
         removeTodo: function(todo_index){
             this.todos.splice(todo_index, 1);
-        }
+        },
+        // control: function(elm){
+        //     console.log(elm);
+        // }
 
     }
 })
