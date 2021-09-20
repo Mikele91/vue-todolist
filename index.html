@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="style.css">
         <title>Document</title>
     </head>
@@ -17,17 +18,18 @@
                     <img id="logo" src="logo.png" alt="">
                     <div id="section_input">
 
-                        <input v-model="newToDo" id="input"  type="text" placeholder="TO DO">
-                        <button @click="push" id="btn"> Aggiungi </button>
+                        <input v-model="newTodo" id="input"  type="text" placeholder="TO DO" @keyup.enter="push()">>
+                        <button @click="push()" id="btn"> Aggiungi </button>
                     </div>
                 </header>
 
                 <main>
                     <div id="container-todo">
-
-                        <ul id="todo-list">
-                            <li v-for="(todo, i) in todos" :key="i">{{todo}}</li>
+                        
+                        <ul id="todo-list" v-if="todos.length>0">
+                            <li v-for="(todo, i) in todos" :key="i">{{todo}}<i @click="removeTodo(i)" class="far fa-times-circle"></i></li>
                         </ul>
+                        <h2 v-else> Non hai più cose da fare!</h2>
                     </div>
                 </main>
 

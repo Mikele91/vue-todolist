@@ -33,10 +33,20 @@ header{
 }
 
 ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin:5px;
     padding: 10px;
     list-style: none; 
     border-radius: 10px;
     border-bottom: 1px solid gray;
     background-color: rgba(211, 211, 211, 0.712);
+    cursor: pointer;
+}
+h2{
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.712);
+    margin:5px;
+    padding: 10px;
 }
