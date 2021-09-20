@@ -37,11 +37,14 @@ const app = new Vue ({
             this.todos.splice(todo_index, 1);
         },
         changeTodo: function(elm){
-           console.log(elm);
-            
+            if(elm.stato == true){
+                elm.stato == false;
+            }else{
+                elm.stato == true
+            }
         },
         control: function(elm){
-            if(elm){
+            if(elm.stato == true){
                 return "done"
             }else{
                 return"noDone"
