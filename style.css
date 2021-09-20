@@ -57,3 +57,7 @@ h2{
 .noDone{
     color: red;
 }
+.fa-times-circle{
+    color: black;
+    text-decoration:none;
+}

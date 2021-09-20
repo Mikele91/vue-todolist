@@ -19,14 +19,16 @@ const app = new Vue ({
 
 
         ],
-        newTodo:{tipo:"",
-                stato:false
-                },
+        newTodo:"",
     },
     methods:{
         push: function(){
-            if(this.newTodo.tipo!= ""){
-                this.todos.tipo.push(this.newTodo.tipo);
+            if(this.newTodo!= ""){
+                this.todos.push({
+                    tipo:this.newTodo,
+                    stato:false
+                },
+                    );
                 this.newTodo="";
 
             }
@@ -34,9 +36,17 @@ const app = new Vue ({
         removeTodo: function(todo_index){
             this.todos.splice(todo_index, 1);
         },
-        // control: function(elm){
-        //     console.log(elm);
-        // }
+        changeTodo: function(elm){
+           console.log(elm);
+            
+        },
+        control: function(elm){
+            if(elm){
+                return "done"
+            }else{
+                return"noDone"
+            }
+        }
 
     }
 })
