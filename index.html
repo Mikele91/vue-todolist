@@ -17,8 +17,8 @@
                     <img id="logo" src="logo.png" alt="">
                     <div id="section_input">
 
-                        <input id="input"  type="text">
-                        <button id="btn"> Aggiungi </button>
+                        <input v-model="newToDo" id="input"  type="text" placeholder="TO DO">
+                        <button @click="push" id="btn"> Aggiungi </button>
                     </div>
                 </header>
 
