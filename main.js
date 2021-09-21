@@ -3,19 +3,19 @@ const app = new Vue ({
     data:{
         todos:[
 
-            {
-                tipo:"Fare i compiti", 
-                stato : false,
-            },
+            // {
+            //     tipo:"Fare i compiti", 
+            //     stato : false,
+            // },
 
-            {
-                tipo:"Fare il check in", 
-                stato : true,
-            },
-            {
-                tipo:"Prendere aereo", 
-                stato : false,
-            },
+            // {
+            //     tipo:"Fare il check in", 
+            //     stato : true,
+            // },
+            // {
+            //     tipo:"Prendere aereo", 
+            //     stato : false,
+            // },
         ],
         logo: "https://reelclub.files.wordpress.com/2014/05/fmj8.jpg",
         newTodo:"",
