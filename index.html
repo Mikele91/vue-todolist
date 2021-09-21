@@ -15,7 +15,7 @@
         <div id="root">
             <div class="container">
                 <header>
-                    <img id="logo" src="logo.png" alt="">
+                    <img id="logo" :src="logo" alt="">
                     <div id="section_input">
 
                         <input v-model="newTodo" id="input"  type="text" placeholder="TO DO" @keyup.enter="push()">>
@@ -27,7 +27,7 @@
                     <div id="container-todo">
                         
                         <ul id="todo-list" v-if="todos.length>0">
-                            <li v-for="(todo, i) in todos" :key="i":class="control(todos[i])">{{todo.tipo}} <span> <button @click="changeTodo(todos[i])" id="btn-done">Fatto</button> <i @click="removeTodo(i)" class="far fa-times-circle"></i> </span></li>
+                            <li v-for="(todo, i) in todos" :key="i"><span class="span_todo" :class="control(todos[i])">{{todo.tipo}} </span><span> <button @click="changeTodo(todos[i])" id="btn-done">Fatto</button> <i @click="removeTodo(i)" class="far fa-times-circle"></i> </span></li>
                         </ul>
                         <h2 v-else> Non hai più cose da fare!</h2>
                     </div>

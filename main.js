@@ -16,9 +16,8 @@ const app = new Vue ({
                 tipo:"Prendere aereo", 
                 stato : false,
             },
-
-
         ],
+        logo: "https://reelclub.files.wordpress.com/2014/05/fmj8.jpg",
         newTodo:"",
     },
     methods:{
@@ -38,10 +37,11 @@ const app = new Vue ({
         },
         changeTodo: function(elm){
             if(elm.stato == true){
-                elm.stato == false;
+                elm.stato = false;
             }else{
-                elm.stato == true
+                elm.stato = true
             }
+            
         },
         control: function(elm){
             if(elm.stato == true){
